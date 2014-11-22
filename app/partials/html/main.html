@@ -1,0 +1,85 @@
+
+<section id="wave">
+  <div class="container">
+    <div class="header">
+      <h2>Plant Strain !</h2>
+    </div>
+    <div class="row">
+      <div ng-repeat="wave in data.waves|limitTo:8" class="span3 bmember">
+        <div class="econtainer"><img src="{{wave.image}}" alt=""/>
+          <div class="bmeta">
+            <h3>{{wave.name}}</h3>
+            <h4 ng-repeat="genre in wave.genre" ng-if="genre.percent &gt; 0">{{genre.percent}}% {{genre.type}}</h4><span ng-repeat="genre in wave.genre" ng-if="genre.percent &lt;= 0">
+              <h4 ng-repeat="type in wave.type">{{type.name}} </h4></span>
+            <p>Origin : {{wave.origin}}</p>
+            <p>Strain Family : {{wave.strainFamily}}</p>
+            <p>Flowering : {{wave.flowering}}</p>
+            <p>Plant Size : {{wave.height}}</p>
+            <div>
+              <h4>Description</h4>
+              <p>{{wave.description}}</p>
+            </div>
+            <ul class="social">
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="google plus"><i class="icon-google-plus"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="tumblr"><i class="icon-tumblr"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><a href="/#/list/">
+  <div class="up"><i class="icon-caret-up"></i></div>
+  <div class="tinfo">
+    <h3>See More Plant Strain </h3>
+  </div></a>
+<section id="stonedMoments">
+  <div class="container">
+    <div class="header">
+      <h2>Stoned Moments !</h2>
+      <p>You can reach to all stoned moments in here. If you want to seeing more stoned moments, please click see more!</p>
+    </div>
+    <div class="row">
+      <div ng-repeat="wave in data.waves|limitTo:8" class="span3 eblock">
+        <div class="econtainer"><img src="{{wave.image}}" alt=""/>
+          <h3><a href="#">{{wave.name}}</a></h3>
+          <h4>Stoned Moments</h4>
+          <div ng-repeat="stonedItem in wave.stonedMoments|limitTo:2"><span> <strong>Alcohol : {{stonedItem.alcohol}}</strong></span><br/><span> <strong>Music : {{stonedItem.music}}</strong></span><br/><span> <strong>Movie : {{stonedItem.movie}}</strong></span><br/><span> <strong>Book : {{stonedItem.book}}</strong></span><br/><span> <strong>Quote : {{stonedItem.quote}}</strong></span>
+            <hr ng-hide="$last"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><a href="/#/stonedMoments/">
+  <div class="up"><i class="icon-caret-up"></i></div>
+  <div class="tinfo">
+    <h3>See More Stoned Moments</h3>
+  </div></a>
+<section id="contact">
+  <div class="container">
+    <div class="header">
+      <h2>Connect with ush2</h2>
+      <p>follow us on social networks</p>
+    </div>
+    <div class="row">
+      <ul class="socialnetwork">
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Twitter"><i class="mt-twitter"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Google plus"><i class="mt-google-plus"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Soundcloud"><i class="mt-soundcloud"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Facebook"><i class="mt-facebook"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Flickr"><i class="mt-flickr-2"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Instagram"><i class="mt-instagram"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="Last fm"><i class="mt-lastfm"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="pinterest"><i class="mt-pinterest-2"></i></a></li>
+        <li><a href="#" data-placement="top" data-toggle="tooltip" title="youtube"><i class="mt-youtube"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<p> </p>
+<button type="button" ng-hide="lang === 'en'" ng-click="changeLocale('en')" class="btn btn-default">Change to English</button>
+<button type="button" ng-hide="lang === 'tr'" ng-click="changeLocale('tr')" class="btn btn-default">Türkçe'ye Çevir</button>
+<button type="button" ng-hide="lang === 'de'" ng-click="changeLocale('de')" class="btn btn-default">İns Deutsche Übersetzt</button>{{MSG_HELLO}} {{MSG_HOW_ARE_YOU}} {{MSG_THANK_YOU}} {{MSG_CONTENT}}

@@ -1,0 +1,18 @@
+//_buttons.scss
+
+p {
+    .default {
+      width : 45px;
+      height : 25px;
+    }
+    .default-red {
+      width : 45px;
+      height : 25px;
+      background : $white;
+    }
+    .default-grey {
+      width : 45px;
+      height : 25px;
+      background : $grey;
+    }
+}

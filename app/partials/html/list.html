@@ -1,0 +1,33 @@
+
+<section id="wave">
+  <div class="container">
+    <div class="header">
+      <h2>Plant Strain !</h2>
+    </div>
+    <div class="row">
+      <div ng-repeat="wave in data.waves|limitTo:8" class="span3 bmember">
+        <div class="econtainer"><img src="{{wave.image}}" alt=""/>
+          <div class="bmeta">
+            <h3>{{wave.name}}</h3>
+            <h4 ng-repeat="genre in wave.genre" ng-if="genre.percent &gt; 0">{{genre.percent}}% {{genre.type}}</h4><span ng-repeat="genre in wave.genre" ng-if="genre.percent &lt;= 0">
+              <h4 ng-repeat="type in wave.type">{{type.name}} </h4></span>
+            <p>Origin : {{wave.origin}}</p>
+            <p>Strain Family : {{wave.strainFamily}}</p>
+            <p>Flowering : {{wave.flowering}}</p>
+            <p>Plant Size : {{wave.height}}</p>
+            <div>
+              <h4>Description</h4>
+              <p>{{wave.description}}</p>
+            </div>
+            <ul class="social">
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="google plus"><i class="icon-google-plus"></i></a></li>
+              <li><a href="#" data-placement="top" data-toggle="tooltip" title="tumblr"><i class="icon-tumblr"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

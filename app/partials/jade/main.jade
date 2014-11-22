@@ -1,0 +1,115 @@
+section(id='wave')
+	div(class='container')
+		div(class='header')
+			h2 Plant Strain !
+		div(class='row')
+			div(class='span3 bmember', ng-repeat="wave in data.waves|limitTo:8")
+				div(class='econtainer')
+					img(src='{{wave.image}}', alt='')
+					div(class='bmeta')
+						h3 {{wave.name}}
+						h4(ng-repeat="genre in wave.genre", ng-if="genre.percent > 0") {{genre.percent}}% {{genre.type}}
+						span(ng-repeat="genre in wave.genre" , ng-if="genre.percent <= 0")
+							h4(ng-repeat="type in wave.type") {{type.name}} 
+						p Origin : {{wave.origin}}
+						p Strain Family : {{wave.strainFamily}}
+						p Flowering : {{wave.flowering}}
+						p Plant Size : {{wave.height}}
+						div
+							h4 Description
+							p {{wave.description}}
+						ul(class='social')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='facebook')
+									i(class='icon-facebook')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='twitter')
+									i(class='icon-twitter')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='google plus')
+									i(class='icon-google-plus')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='tumblr')
+									i(class='icon-tumblr')
+
+a(href="/#/list/")
+	div(class="up")
+		i(class="icon-caret-up")
+	div(class="tinfo")
+		h3 See More Plant Strain 
+
+section(id='stonedMoments')
+	div(class='container')
+		div(class='header')
+			h2 Stoned Moments !
+			p You can reach to all stoned moments in here. If you want to seeing more stoned moments, please click see more!
+		div(class='row')
+			div(class='span3 eblock', ng-repeat="wave in data.waves|limitTo:8")
+				div(class='econtainer')
+					img(src='{{wave.image}}', alt='')
+					h3
+						a(href='#') {{wave.name}}
+					h4 Stoned Moments
+					div(ng-repeat="stonedItem in wave.stonedMoments|limitTo:2")
+						span 
+							strong Alcohol : {{stonedItem.alcohol}}
+						br
+						span 
+							strong Music : {{stonedItem.music}}
+						br
+						span 
+							strong Movie : {{stonedItem.movie}}
+						br
+						span 
+							strong Book : {{stonedItem.book}}
+						br
+						span 
+							strong Quote : {{stonedItem.quote}}
+						hr(ng-hide="$last")
+
+a(href="/#/stonedMoments/")
+	div(class="up")
+		i(class="icon-caret-up")
+	div(class="tinfo")
+		h3 See More Stoned Moments
+
+section(id='contact')
+	div(class='container')
+		div(class='header')
+			h2 Connect with ush2
+			p follow us on social networks
+		div(class='row')
+			ul(class='socialnetwork')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Twitter')
+									i(class='mt-twitter')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Google plus')
+									i(class='mt-google-plus')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Soundcloud')
+									i(class='mt-soundcloud')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Facebook')
+									i(class='mt-facebook')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Flickr')
+									i(class='mt-flickr-2')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Instagram')
+									i(class='mt-instagram')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='Last fm')
+									i(class='mt-lastfm')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='pinterest')
+									i(class='mt-pinterest-2')
+							li
+								a(href='#', data-placement='top', data-toggle='tooltip', title='youtube')
+									i(class='mt-youtube')
+p 
+button(type="button" class="btn btn-default" ng-hide="lang === 'en'" ng-click="changeLocale('en')") Change to English
+button(type="button" class="btn btn-default" ng-hide="lang === 'tr'" ng-click="changeLocale('tr')") Türkçe'ye Çevir
+button(type="button" class="btn btn-default" ng-hide="lang === 'de'" ng-click="changeLocale('de')") İns Deutsche Übersetzt
+
+{{MSG_HELLO}} {{MSG_HOW_ARE_YOU}} {{MSG_THANK_YOU}} {{MSG_CONTENT}}

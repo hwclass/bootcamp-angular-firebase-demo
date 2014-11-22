@@ -1,0 +1,22 @@
+//_common.scss
+
+* html .clearfix {
+	height: 1%;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+input, button, textarea {
+	margin : 5px 0 0 0;
+}
+.clear:before,
+.clear:after {
+  content: " ";
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+}

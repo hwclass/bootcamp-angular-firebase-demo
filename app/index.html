@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+    <meta charset="utf-8">
+    <title>Kobane - Gulp - Bower - Require - Angular - Jade - Sass Project Workflow Boilerplate</title>
+    <style>
+      [ng-cloak] {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="css/site/main.css" type="text/css" />
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+	</head>
+	<body ng-cloak>
+		<ul class="menu">
+		  <li><a href="#/home">Home</a></li>
+		  <li><a href="#/list">List</a></li>
+		</ul>
+		<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<fieldset>
+	    <legend>Content Section</legend>
+			<div ng-view></div>
+			<div class="form-group wrapper">Version: v<span app-version></span></div>
+		</fieldset>
+		<script data-main="js/boot" src="libs/requirejs/require.js"></script>
+	</body>
+</html>
+

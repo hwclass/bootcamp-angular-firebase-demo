@@ -1,0 +1,23 @@
+[
+  {
+  	"lang" : "de",
+  	"en" : {
+  		"MSG_HELLO" : "Hello!",
+    	"MSG_HOW_ARE_YOU" : "How are you?",
+    	"MSG_THANK_YOU" : "Thank you...",
+    	"MSG_CONTENT" : "Content"
+  	},
+  	"tr" : {
+			"MSG_HELLO" : "Merhaba!",
+	  	"MSG_HOW_ARE_YOU" : "Nasılsın?",
+	  	"MSG_THANK_YOU" : "Teşekkürler...",
+	  	"MSG_CONTENT" : "İçerik"
+  	},
+    "de" : {
+      "MSG_HELLO" : "Hallo!",
+      "MSG_HOW_ARE_YOU" : "Wie getz?",
+      "MSG_THANK_YOU" : "Danke...",
+      "MSG_CONTENT" : "Inhalt"
+    }
+	}
+]
