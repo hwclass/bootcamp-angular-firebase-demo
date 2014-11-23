@@ -1,0 +1,8 @@
+div(class="container")
+	p(class="questionaire" ng-controller="PollController" )
+		form(name="pollForm" ng-submit="submitPollForm()")
+			h3	{{questionaire[0].text}}
+			div(ng-repeat="answer in answers")
+				input(type="radio" ng-model="$parent.choice" value="{{answer._id}}")
+				{{answer.text}} - {{answer.vote}}
+			input(type="submit" id="submit" value="Oyla")
