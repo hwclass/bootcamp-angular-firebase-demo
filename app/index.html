@@ -8,8 +8,9 @@
         display: none;
       }
     </style>
-    <link rel="stylesheet" href="css/site/main.css" type="text/css" />
+
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/site/main.css" type="text/css" />
 	</head>
 	<body ng-cloak>
 		<!--
@@ -21,11 +22,45 @@
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<fieldset>
-	    <legend>Content Section</legend>
-			<div ng-view></div>
+		<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">AngularJS Bootcamp</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <p class="lead" ng-view>
+
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+			
 			<div class="form-group wrapper">Version: v<span app-version></span></div>
-		</fieldset>
+
 		<script data-main="js/boot" src="libs/requirejs/require.js"></script>
 	</body>
 </html>

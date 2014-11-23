@@ -1,12 +1,14 @@
-
-<div class="container">
+<div>
   <p ng-controller="PollController" class="questionaire">
     <form name="pollForm" ng-submit="submitPollForm()">
-      <h3>	{{questionaire[0].text}}</h3>
+      <h1 class="cover-heading">{{questionaire[0].text}}</h1>
       <div ng-repeat="answer in answers">
-        <input type="radio" ng-model="$parent.choice" value="{{answer._id}}"/>{{answer.text}} - {{answer.vote}}
+        <input type="radio" ng-model="$parent.choice" value="{{answer._id}}"/> {{answer.text}} - {{answer.vote}}
       </div>
-      <input type="submit" id="submit" value="Oyla"/>
+      <p class="lead">
+	      <input class="btn btn-lg btn-default" type="submit" id="submit" value="Oyla"/>
+	      <a href="https://github.com/hwclass/bootcamp-angular-firebase-demo" class="btn btn-lg btn-default" target="_blank">Kaynak</a>
+	    </p>
     </form>
   </p>
 </div>
