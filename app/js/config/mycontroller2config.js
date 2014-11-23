@@ -4,7 +4,7 @@ define(function () {
   return function () {
     return {
       firebase : {
-        url : 'https://xxx.firebaseio.com/'
+        url : 'https://angular-bootcamp-survey-demo.firebaseio.com/'
       },
       /*
        * isLast() : gets if an index of an array is on the last index or not 
