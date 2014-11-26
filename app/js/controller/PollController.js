@@ -12,49 +12,26 @@ define(function () {
     
     var sync = $firebase(ref);
     
-    var comingData = sync.$asArray();
+    $scope.answers = sync.$asArray();
 
-    $scope.answers = comingData;
+    $scope.choice = null;
 
-    /*
-  	$scope.data.$loaded().then(function() {
-    	$scope.answers = (function() {
-        return $scope.data.answers.answers;
-    	})();
-    	$scope.questionaire = (function() {
-        return $scope.data.answers.questionaires;
-    	})();
+  	$scope.answers.$loaded().then(function() {
+      console.log($scope.answers);
   	});
-    */
 
     $scope.submitPollForm = function () {
-      
-      console.log($scope.choice);
-
-      var takinardi = sync._arraySync.getArray().$save({_id: $scope.choice, vote : "444"}).then(function() {
-        console.log('Oyunuz kaydedildi. Teşekkürler.');
-      });
-
-      var item = null;
-      
-      /*
-      for (var counterForItems = 0, len = $scope.data.answers.answers.length; counterForItems < len; counterForItems++) {
-        if ($scope.choice === $scope.data.answers.answers[counterForItems]['_id']) {
-          item = $scope.data.answers.answers[counterForItems];
+      for (var counterForAnswers = 0, len = $scope.answers.length; counterForAnswers < len; counterForAnswers++) {
+        if ($scope.choice === $scope.answers[counterForAnswers]['$id']) {
+          $scope.answers[counterForAnswers].vote = $scope.answers[counterForAnswers].vote + 1;
+          $scope.answers.$save(counterForAnswers);
+          var totalVotes = 0;
+          for (var counterForTotalVotes = 0, len = $scope.answers.length; counterForTotalVotes < len; counterForTotalVotes++) {
+            totalVotes += $scope.answers[counterForTotalVotes].vote;
+          }
+          angular.element('#votes-' + counterForAnswers).text('% ' + $scope.answers[counterForAnswers].vote / totalVotes * 100);
         }
-      }
-
-      console.dir(item);
-      console.dir(sync._objectSync.getObject().answers.answers);
-      console.dir(ref.child("foo/counter"));
-      */
-      
-      /*
-      if (sync._objectSync.getObject().answers.answers[item._id] == item._id) {
-        console.log('sadasdasd');
-      }
-      */
-
+      };
     }
     
   }];
