@@ -30,9 +30,10 @@ define(function () {
             totalVotes += $scope.answers[counterForTotalVotes].vote;
           }
           var formattedFloat = new Number($scope.answers[counterForAnswers].vote / totalVotes * 100).toFixed(0);
-          angular.element('#votes-' + counterForAnswers).text('% ' + formattedFloat);
+          angular.element('#votes-' + counterForAnswers).text('% ' + (formattedFloat>0?formattedFloat:0));
         }
       };
+      calculatePersents();
     }
 
     var calculatePersents = function () {
@@ -42,9 +43,9 @@ define(function () {
           totalVotes += $scope.answers[counterForTotalVotes].vote;
         }
         var formattedFloat = new Number($scope.answers[counterForAnswers].vote / totalVotes * 100).toFixed(0);
-        angular.element('#votes-' + counterForAnswers).text('% ' + formattedFloat);
+        angular.element('#votes-' + counterForAnswers).text('% ' + (formattedFloat>0?formattedFloat:0));
       }
-    }
+    };
     
   }];
 
