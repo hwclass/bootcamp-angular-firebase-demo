@@ -4,11 +4,11 @@
  */
 define(function () {
 
-  return ['$scope', 'PollConfigService', '$firebase', function ($scope, PollConfigService, $firebase) {
+  return ['$scope', 'PollConfig', '$firebase', function ($scope, PollConfig, $firebase) {
     
     'use strict';
     
-    var ref = new Firebase(PollConfigService.firebase.url);
+    var ref = new Firebase(PollConfig.firebase.url);
     
     var sync = $firebase(ref);
     
@@ -17,7 +17,7 @@ define(function () {
     $scope.choice = null;
 
   	$scope.answers.$loaded().then(function() {
-      console.log($scope.answers);
+      calculatePersents();
   	});
 
     $scope.submitPollForm = function () {
@@ -29,9 +29,21 @@ define(function () {
           for (var counterForTotalVotes = 0, len = $scope.answers.length; counterForTotalVotes < len; counterForTotalVotes++) {
             totalVotes += $scope.answers[counterForTotalVotes].vote;
           }
-          angular.element('#votes-' + counterForAnswers).text('% ' + $scope.answers[counterForAnswers].vote / totalVotes * 100);
+          var formattedFloat = new Number($scope.answers[counterForAnswers].vote / totalVotes * 100).toFixed(0);
+          angular.element('#votes-' + counterForAnswers).text('% ' + formattedFloat);
         }
       };
+    }
+
+    var calculatePersents = function () {
+      for (var counterForAnswers = 0, len = $scope.answers.length; counterForAnswers < len; counterForAnswers++) {
+        var totalVotes = 0;
+        for (var counterForTotalVotes = 0, len = $scope.answers.length; counterForTotalVotes < len; counterForTotalVotes++) {
+          totalVotes += $scope.answers[counterForTotalVotes].vote;
+        }
+        var formattedFloat = new Number($scope.answers[counterForAnswers].vote / totalVotes * 100).toFixed(0);
+        angular.element('#votes-' + counterForAnswers).text('% ' + formattedFloat);
+      }
     }
     
   }];
