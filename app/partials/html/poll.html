@@ -1,7 +1,7 @@
 <div class="wrapper">
   <p ng-controller="PollController" class="questionaire">
     <form name="pollForm" ng-submit="submitPollForm()">
-      <h1 class="cover-heading">{{questionaire.text}}</h1>
+      <h1 class="cover-heading">AngularJS Bootcamp'i sizce nasıldı?</h1>
       <div ng-repeat="answer in answers">
         <input type="radio" ng-model="$parent.choice" value="{{answer.$id}}"/> {{answer.text}} - {{answer.vote}}
         <span id="votes-{{$index}}"></span>
