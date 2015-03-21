@@ -42,7 +42,7 @@ define(function () {
         for (var counterForTotalVotes = 0, len = $scope.answers.length; counterForTotalVotes < len; counterForTotalVotes++) {
           totalVotes += $scope.answers[counterForTotalVotes].vote;
         }
-        var formattedFloat = new Number($scope.answers[counterForAnswers].vote / totalVotes * 100).toFixed(0);
+        var formattedFloat = new Number(($scope.answers[counterForAnswers].vote / totalVotes) * 100).toFixed(0);
         angular.element('#votes-' + counterForAnswers).text('% ' + (formattedFloat>0?formattedFloat:0));
       }
     };
