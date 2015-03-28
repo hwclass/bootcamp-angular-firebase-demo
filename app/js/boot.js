@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * A module for initializing the application-based modules to represent them into angular
+ * @module config
+ */
 require.config({
 	paths: {
     async: "../libs/requirejs-plugins/src/async",
