@@ -1,6 +1,9 @@
 'use strict';
 
-/*This is the main wrapper for initializing the application-based modules*/
+/**
+ * A module for initializing the application-based modules to represent them into angular
+ * @module app
+ */
 define(['angular'], function() {
   return angular.module('app', [
     'ngRoute',
