@@ -1,15 +1,12 @@
-<div class="wrapper">
+
+<div class="container">
   <p ng-controller="PollController" class="questionaire">
     <form name="pollForm" ng-submit="submitPollForm()">
-      <h1 class="cover-heading">AngularJS Bootcamp'i sizce nasıldı?</h1>
+      <h3>	{{questionaire[0].text}}</h3>
       <div ng-repeat="answer in answers">
-        <input type="radio" ng-model="$parent.choice" value="{{answer.$id}}"/> {{answer.text}} - {{answer.vote}}
-        <span id="votes-{{$index}}"></span>
+        <input type="radio" ng-model="$parent.choice" value="{{answer._id}}"/>{{answer.text}} - {{answer.vote}}
       </div>
-      <p class="lead">
-	      <input class="btn btn-lg btn-default" type="submit" id="submit" value="Oyla"/>
-	      <a href="https://github.com/hwclass/bootcamp-angular-firebase-demo" class="btn btn-lg btn-default" target="_blank">Kaynak</a>
-	    </p>
+      <input type="submit" id="submit" value="Oyla"/>
     </form>
   </p>
 </div>
