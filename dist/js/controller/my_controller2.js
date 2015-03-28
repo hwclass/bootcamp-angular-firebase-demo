@@ -1,1 +1,0 @@
-define(function(){return["$scope","Config2Service","$firebase","VersionService",function($scope,Config2Service,$firebase){"use strict";var ref=new Firebase(Config2Service.firebase.url),sync=$firebase(ref);$scope.data=sync.$asObject()}]});

@@ -1,1 +1,0 @@
-"use strict";define(function(){return["VersionService",function(versionService){return function(scope,elm){elm.text(versionService.version)}}]});
